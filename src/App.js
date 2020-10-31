@@ -14,6 +14,16 @@ import './App.css';
               <div className="burger__slice"></div>
           </div>
           </div>
+
+  const Arrow = () =>
+  <svg width="28" height="8" viewBox="0 0 28 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fillRule="evenodd" clipRule="evenodd" d="M24.2206 7.87969C24.063 8.0401 23.8006 8.0401 23.6375 7.87969C23.4798 7.72469 23.4798 7.46671 23.6375 7.31208L26.5945 4.40466L0.408252 4.40466C0.180792 4.4043 0 4.22654 0 4.00289C0 3.77924 0.180792 3.5957 0.408252 3.5957L26.5945 3.5957L23.6375 0.693704C23.4798 0.533285 23.4798 0.274952 23.6375 0.120314C23.8006 -0.0401049 24.0634 -0.0401049 24.2206 0.120314L27.8776 3.71601C28.0408 3.87101 28.0408 4.12899 27.8776 4.28362L24.2206 7.87969Z" fill="#202020"/>
+  </svg> 
+
+  const Slash = () => 
+  <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path fillRule="evenodd" clipRule="evenodd" d="M12 0H8L0 16H4L12 0ZM20 0H16L8 16H12L20 0Z" fill="#FFCA00"/>
+  </svg>
           
   const HeaderMobile = () =>
   <header className="header-mobile">
@@ -78,12 +88,59 @@ import './App.css';
                 </svg>
         </button>
         </section>
+ const ServiceItem = ({serviceTitleContent, serviceContent, imgSrc}) =>
+    <div className="service-list_item">
+                       <img  className="item-img"  width="130" height="130" src={imgSrc} alt="icon-engineering-service"></img>
+                        <div className="service-list_item_service-description">
+                            <a href="google.com" className="item_title">{serviceTitleContent} </a>
+                            <div className="item_description">{serviceContent}</div>
+                            <a href="google.com" className="learn-more">Learn More
+                                   <Arrow/>                                
+                            </a>
+                        </div>
+                    </div>
+
+  const Main = () =>
+        <div className="body-section">
+            <div className="body-section__service-block">
+                <div className="service-block__title">
+                    <div className="list_title">
+                            <Slash/>  
+                            Service
+                    </div>
+                </div>
+                <div className="service__items">
+                <div className="body-section__service-list">
+                <ServiceItem imgSrc='./images/icon-engineering-service .png' serviceTitleContent='Engineering Service' serviceContent='Software Development / Software Testing / Solutions Architecture / Business Analysis / Operations Support'/>
+                </div>
+                <div className="body-section__service-list">
+                <ServiceItem imgSrc='./images/icon internet of thing.png' serviceTitleContent='Internet of Things' serviceContent='Intelligent Mobility / Predictive Maintenance / Smart Manufacturing'/>
+                </div>
+                <div className="body-section__service-list">
+                <ServiceItem imgSrc='./images/icon extended reality.png' serviceTitleContent='Extended Reality XR' serviceContent='VR / MR / AR'/>
+                </div>
+                <div className="body-section__service-list">
+                <ServiceItem imgSrc='./images/icon al & im.png' serviceTitleContent='AL & ML' serviceContent='Artificial Intelligence / Intelligent Automation / Advanced Analytics'/>
+                </div>
+                <div className="body-section__service-list">
+                <ServiceItem imgSrc='./images/icon big data and analityc.png' serviceTitleContent='Big data & Analytics' serviceContent='BI & Augmented Analytics / Enterprise Data Platforms / Data Strategy and Governance'/>
+                </div>
+                <div className="body-section__service-list">
+                <ServiceItem imgSrc='./images/icon blockchain.png' serviceTitleContent='Blockchain' serviceContent='Создаем прибыльные интернет-магазины, маркетплейсы и агрегаторы'/>
+                </div>
+                <div className="body-section__service-list">
+                <ServiceItem imgSrc='./images/icon game art.png' serviceTitleContent='Game Art Production' serviceContent='Concept art, UI, illustration / 3D models and environments / VXT and animations'/>
+                </div>
+                    </div>
+            </div>
+        </div>
 
   const App = () =>
     <div className="Body">
       <HeaderMobile/>
       <Header/>
       <HeadSection/>
+      <Main/>
     </div>
 
 
