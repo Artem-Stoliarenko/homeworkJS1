@@ -34,16 +34,16 @@ import './App.css';
         <div className="header__info">
             <ul className="navigation">
                 <li>
-                    <a href="google.com">Services</a>
+                    <a href="https://www.google.com">Services</a>
                 </li>
                 <li>
-                    <a href="google.com">Portfolio</a>
+                    <a href="https://www.google.com">Portfolio</a>
                 </li>
                 <li>
-                    <a href="google.com">About</a>
+                    <a href="https://www.google.com">About</a>
                 </li>
                 <li className="navigation_contact">
-                    <a href="google.com">Contact</a>
+                    <a href="https://www.google.com">Contact</a>
                 </li>
             </ul>
             <a className="navigation_discuss" href="google.com">Discuss Your Idea</a>
@@ -68,7 +68,7 @@ import './App.css';
                 <h1 className="title">
                     Creative Web Production from Ukraine
                 </h1>
-                    <a className="title-discuss_link" href="google.com">Discuss Your Idea<div className="title-discuss_link_circle"></div></a>
+                    <a className="title-discuss_link" href="https://www.google.com">Discuss Your Idea<div className="title-discuss_link_circle"></div></a>
             </div>
             </div>
         {/* <!-- <div class="arrow">
@@ -89,9 +89,9 @@ import './App.css';
     <div className="service-list_item">
                        <img  className="item-img"  width="130" height="130" src={imgSrc} alt="icon-engineering-service"></img>
                         <div className="service-list_item_service-description">
-                            <a href="google.com" className="item_title">{serviceTitleContent} </a>
+                            <a href="https://www.google.com" className="item_title">{serviceTitleContent} </a>
                             <div className="item_description">{serviceContent}</div>
-                            <a href="google.com" className="learn-more">Learn More
+                            <a href="https://www.google.com" className="learn-more">Learn More
                                    <Arrow/>                                
                             </a>
                         </div>
@@ -244,13 +244,13 @@ const SeoText = () =>
             </div>
             <FooterMail mail='mailto:contact@digitfactor.com' mailName='contact@digitfactor.com'/>
             <div className="footer__social-link">
-                <a href="facebook.com" className="social-link">
+                <a href="https://www.facebook.com" className="social-link">
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.05" fillRule="evenodd" clipRule="evenodd" d="M24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48Z" fill="white"/>
                     <path fillRule="evenodd" clipRule="evenodd" d="M27.6611 16.0033L25.5024 16C23.0772 16 21.5099 17.5455 21.5099 19.9376V21.7531H19.3394C19.1519 21.7531 19 21.8993 19 22.0795V24.71C19 24.8903 19.1521 25.0363 19.3394 25.0363H21.5099V31.6738C21.5099 31.854 21.6618 32 21.8493 32H24.6812C24.8687 32 25.0206 31.8539 25.0206 31.6738V25.0363H27.5584C27.7459 25.0363 27.8978 24.8903 27.8978 24.71L27.8989 22.0795C27.8989 21.993 27.863 21.9101 27.7995 21.8488C27.7359 21.7876 27.6493 21.7531 27.5593 21.7531H25.0206V20.2141C25.0206 19.4744 25.204 19.0989 26.2065 19.0989L27.6607 19.0984C27.8481 19.0984 28 18.9522 28 18.7721V16.3296C28 16.1496 27.8483 16.0037 27.6611 16.0033Z" fill="white"/>
                     </svg>
                 </a>
-                <a href="instagram.com" className="social-link">
+                <a href="https://www.instagram.com" className="social-link">
                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path opacity="0.05" fillRule="evenodd" clipRule="evenodd" d="M24 48C37.2548 48 48 37.2548 48 24C48 10.7452 37.2548 0 24 0C10.7452 0 0 10.7452 0 24C0 37.2548 10.7452 48 24 48Z" fill="white"/>
                         <path fillRule="evenodd" clipRule="evenodd" d="M33 25.8096V32H29.3563V26.2242C29.3563 24.7733 28.8293 23.783 27.5105 23.783C26.5037 23.783 25.9045 24.4504 25.6409 25.0959C25.5448 25.3267 25.5201 25.6479 25.5201 25.9709V32H21.8752C21.8752 32 21.9243 22.2177 21.8752 21.2041H25.5197V22.7344C25.5123 22.7459 25.5027 22.7582 25.4958 22.7693H25.5197V22.7344C26.0039 21.9999 26.8687 20.9505 28.8042 20.9505C31.2023 20.9505 33 22.4935 33 25.8096ZM18.0625 16C16.8156 16 16 16.8056 16 17.8649C16 18.9012 16.792 19.7312 18.0141 19.7312H18.0385C19.3095 19.7312 20.1 18.9013 20.1 17.8649C20.076 16.8056 19.3095 16 18.0625 16ZM16.2165 32H19.86V21.2041H16.2165V32Z" fill="white"/>
