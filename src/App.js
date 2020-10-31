@@ -96,7 +96,8 @@ import './App.css';
                             </a>
                         </div>
                     </div>
-const BlockTitle = ({title}) => 
+const BlockTitle = ({title, children}) => 
+    <div className="block_title">
     <div className="service-block__title">
                     <div className="list_title">
                     <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -105,6 +106,10 @@ const BlockTitle = ({title}) =>
                             {title}
                     </div>
                 </div>
+                <div className="text-about">
+                          {children}
+                      </div>
+    </div>
 
 const ProjectItem = ({headTitle, headContent, children, imgSrc}) =>
 <div className="project-list__item">
@@ -191,12 +196,7 @@ const SeoText = () =>
                 </div>
             </div>
           <div className="body-section__portfolio-block">
-            <div className="block_title">
-            <BlockTitle title='Portfolio'/>
-                      <div className="text-about">
-                          Здесь будет какой-то текст который расскажет о услугах
-                      </div>
-            </div>
+            <BlockTitle title='Portfolio'>Здесь будет какой-то текст который расскажет о услугах</BlockTitle>
             <div className="body-section__project-list">
             <ProjectItem imgSrc='./images/project-img2.jpg' headTitle='Landing Page' headContent='Project Name' >Создаем прибыльные<br/>  интернет-магазины, маркетплейсы</ProjectItem>
             <ProjectItem imgSrc='./images/project-img3.jpg' headTitle='Landing Page' headContent='Project Name' >Создаем прибыльные<br/>  интернет-магазины, маркетплейсы</ProjectItem>
@@ -212,12 +212,7 @@ const SeoText = () =>
             </div>
           </div>
           <div className="body-section__clients">
-          <div className="block_title">
-            <BlockTitle title='Clients'/>
-                      <div className="text-about">
-                          Здесь будет какой-то текст который расскажет о услугах
-                      </div>
-          </div>
+            <BlockTitle title='Clients'>Здесь будет какой-то текст который расскажет о услугах</BlockTitle>
             <div className="clients">
             <Client srcImg='./images/stada_color.png' alt='stada img' />
             <Client srcImg='./images/Hunter_Logo.png' alt='hunter img' />
