@@ -85,12 +85,12 @@ import './App.css';
                 </svg>
         </button>
         </section>
- const ServiceItem = ({serviceTitleContent, serviceContent, imgSrc}) =>
+ const ServiceItem = ({serviceTitleContent, children, imgSrc}) =>
     <div className="service-list_item">
                        <img  className="item-img"  width="130" height="130" src={imgSrc} alt="icon-engineering-service"></img>
                         <div className="service-list_item_service-description">
                             <a href="https://www.google.com" className="item_title">{serviceTitleContent} </a>
-                            <div className="item_description">{serviceContent}</div>
+                            <div className="item_description">{children}</div>
                             <a href="https://www.google.com" className="learn-more">Learn More
                                    <Arrow/>                                
                             </a>
@@ -106,7 +106,7 @@ const BlockTitle = ({title}) =>
                     </div>
                 </div>
 
-const ProjectItem = ({headTitle, headContent, content, imgSrc}) =>
+const ProjectItem = ({headTitle, headContent, children, imgSrc}) =>
 <div className="project-list__item">
                         <div className="project-list__item_head">
                             <img className="project-img" height="396" width="310" src={imgSrc} alt="project "></img>
@@ -120,11 +120,11 @@ const ProjectItem = ({headTitle, headContent, content, imgSrc}) =>
                         </div>
                         </div>
                         <div className="project-list__item_body">
-                            <div className="project_description">{content}</div>
+                            <div className="project_description">{children}</div>
                         </div>
  </div>
 
-const AchievementItem = ({score, description, content}) =>
+const AchievementItem = ({score, description, children}) =>
 <div className="achivements__item">
                         <div className="achivements__item_score">
                             {score}
@@ -134,7 +134,7 @@ const AchievementItem = ({score, description, content}) =>
                                 {description}
                             </div>
                             <div className="achivements__item_content">
-                                {content}
+                                {children}
                             </div>
                         </div>
 </div>
@@ -168,25 +168,25 @@ const SeoText = () =>
                 <BlockTitle title='Service'/>
                 <div className="service__items">
                     <div className="body-section__service-list">
-                    <ServiceItem imgSrc='./images/icon-engineering-service .png' serviceTitleContent='Engineering Service' serviceContent='Software Development / Software Testing / Solutions Architecture / Business Analysis / Operations Support'/>
+                    <ServiceItem imgSrc='./images/icon-engineering-service .png' serviceTitleContent='Engineering Service'> Software Development / Software Testing / Solutions Architecture / Business Analysis / Operations Support </ServiceItem>
                     </div>
                     <div className="body-section__service-list">
-                    <ServiceItem imgSrc='./images/icon internet of thing.png' serviceTitleContent='Internet of Things' serviceContent='Intelligent Mobility / Predictive Maintenance / Smart Manufacturing'/>
+                    <ServiceItem imgSrc='./images/icon internet of thing.png' serviceTitleContent='Internet of Things'>Intelligent Mobility / Predictive Maintenance / Smart Manufacturing</ServiceItem>
                     </div>
                     <div className="body-section__service-list">
-                    <ServiceItem imgSrc='./images/icon extended reality.png' serviceTitleContent='Extended Reality XR' serviceContent='VR / MR / AR'/>
+                    <ServiceItem imgSrc='./images/icon extended reality.png' serviceTitleContent='Extended Reality XR'>VR / MR / AR</ServiceItem>
                     </div>
                     <div className="body-section__service-list">
-                    <ServiceItem imgSrc='./images/icon al & im.png' serviceTitleContent='AL & ML' serviceContent='Artificial Intelligence / Intelligent Automation / Advanced Analytics'/>
+                    <ServiceItem imgSrc='./images/icon al & im.png' serviceTitleContent='AL & ML' >Artificial Intelligence / Intelligent Automation / Advanced Analytics</ServiceItem>
                     </div>
                     <div className="body-section__service-list">
-                    <ServiceItem imgSrc='./images/icon big data and analityc.png' serviceTitleContent='Big data & Analytics' serviceContent='BI & Augmented Analytics / Enterprise Data Platforms / Data Strategy and Governance'/>
+                    <ServiceItem imgSrc='./images/icon big data and analityc.png' serviceTitleContent='Big data & Analytics'>BI & Augmented Analytics / Enterprise Data Platforms / Data Strategy and Governance</ServiceItem>
                     </div>
                     <div className="body-section__service-list">
-                    <ServiceItem imgSrc='./images/icon blockchain.png' serviceTitleContent='Blockchain' serviceContent='Создаем прибыльные интернет-магазины, маркетплейсы и агрегаторы'/>
+                    <ServiceItem imgSrc='./images/icon blockchain.png' serviceTitleContent='Blockchain' >Создаем прибыльные интернет-магазины, маркетплейсы и агрегаторы</ServiceItem>
                     </div>
                     <div className="body-section__service-list">
-                    <ServiceItem imgSrc='./images/icon game art.png' serviceTitleContent='Game Art Production' serviceContent='Concept art, UI, illustration / 3D models and environments / VXT and animations'/>
+                    <ServiceItem imgSrc='./images/icon game art.png' serviceTitleContent='Game Art Production' >Concept art, UI, illustration / 3D models and environments / VXT and animations</ServiceItem>
                     </div>
                 </div>
             </div>
@@ -198,17 +198,17 @@ const SeoText = () =>
                       </div>
             </div>
             <div className="body-section__project-list">
-            <ProjectItem imgSrc='./images/project-img2.jpg' headTitle='Landing Page' headContent='Project Name' content='Создаем прибыльные  интернет-магазины, маркетплейсы'/>
-            <ProjectItem imgSrc='./images/project-img3.jpg' headTitle='Landing Page' headContent='Project Name' content='Создаем прибыльные  интернет-магазины, маркетплейсы'/>
-            <ProjectItem imgSrc='./images/project-img2.jpg' headTitle='Landing Page' headContent='Project Name' content='Создаем прибыльные  интернет-магазины, маркетплейсы'/>
+            <ProjectItem imgSrc='./images/project-img2.jpg' headTitle='Landing Page' headContent='Project Name' >Создаем прибыльные<br/>  интернет-магазины, маркетплейсы</ProjectItem>
+            <ProjectItem imgSrc='./images/project-img3.jpg' headTitle='Landing Page' headContent='Project Name' >Создаем прибыльные<br/>  интернет-магазины, маркетплейсы</ProjectItem>
+            <ProjectItem imgSrc='./images/project-img2.jpg' headTitle='Landing Page' headContent='Project Name' >Создаем прибыльные<br/>  интернет-магазины, маркетплейсы</ProjectItem>
             </div>
           </div>
           <div className="body-section__achivementes">
             <div className="achievements">
-              <AchievementItem score='2+' description='Years' content='Создаем прибыльные интернет-магазины, маркетплейсы'/>
-              <AchievementItem score='40+' description='Project' content='Создаем прибыльные интернет-магазины, маркетплейсы'/>
-              <AchievementItem score='10+' description='Expert' content='Создаем прибыльные интернет-магазины, маркетплейсы'/>
-              <AchievementItem score='40+' description='Project' content='Создаем прибыльные интернет-магазины, маркетплейсы'/>
+              <AchievementItem score='2+' description='Years'>Создаем прибыльные интернет-магазины, маркетплейсы</AchievementItem>
+              <AchievementItem score='40+' description='Project'>Создаем прибыльные интернет-магазины, маркетплейсы</AchievementItem>
+              <AchievementItem score='10+' description='Expert' >Создаем прибыльные интернет-магазины, маркетплейсы</AchievementItem>
+              <AchievementItem score='40+' description='Project'>Создаем прибыльные интернет-магазины, маркетплейсы</AchievementItem>
             </div>
           </div>
           <div className="body-section__clients">
