@@ -1,4 +1,5 @@
 import './App.css';
+
   const Logo = () => 
   <a href=".header" className="logo">
   <svg width="149" height="30" viewBox="0 0 149 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +87,8 @@ import './App.css';
         </button>
         </section>
  const ServiceItem = ({serviceTitleContent, children, imgSrc}) =>
-    <div className="service-list_item">
+                <div className="body-section__service-list">
+                    <div className="service-list_item">
                        <img  className="item-img"  width="130" height="130" src={imgSrc} alt="icon-engineering-service"></img>
                         <div className="service-list_item_service-description">
                             <a href="https://www.google.com" className="item_title">{serviceTitleContent} </a>
@@ -96,6 +98,7 @@ import './App.css';
                             </a>
                         </div>
                     </div>
+                </div>
 const BlockTitle = ({title, children}) => 
     <div className="block_title">
     <div className="service-block__title">
@@ -130,7 +133,7 @@ const ProjectItem = ({headTitle, headContent, children, imgSrc}) =>
  </div>
 
 const AchievementItem = ({score, description, children}) =>
-<div className="achivements__item">
+                    <div className="achivements__item">
                         <div className="achivements__item_score">
                             {score}
                         </div>
@@ -142,7 +145,7 @@ const AchievementItem = ({score, description, children}) =>
                                 {children}
                             </div>
                         </div>
-</div>
+                    </div>
 
 const Client = ({srcImg, alt}) =>
 <div className="clients__block">
@@ -166,60 +169,73 @@ const SeoText = () =>
                     </div>
                 </div>
             </div>
-
-  const Main = () =>
-        <div className="body-section">
-            <div className="body-section__service-block">
-                <BlockTitle title='Service'/>
-                <div className="service__items">
-                    <div className="body-section__service-list">
-                    <ServiceItem imgSrc='./images/icon-engineering-service .png' serviceTitleContent='Engineering Service'> Software Development / Software Testing / Solutions Architecture / Business Analysis / Operations Support </ServiceItem>
-                    </div>
-                    <div className="body-section__service-list">
-                    <ServiceItem imgSrc='./images/icon internet of thing.png' serviceTitleContent='Internet of Things'>Intelligent Mobility / Predictive Maintenance / Smart Manufacturing</ServiceItem>
-                    </div>
-                    <div className="body-section__service-list">
-                    <ServiceItem imgSrc='./images/icon extended reality.png' serviceTitleContent='Extended Reality XR'>VR / MR / AR</ServiceItem>
-                    </div>
-                    <div className="body-section__service-list">
-                    <ServiceItem imgSrc='./images/icon al & im.png' serviceTitleContent='AL & ML' >Artificial Intelligence / Intelligent Automation / Advanced Analytics</ServiceItem>
-                    </div>
-                    <div className="body-section__service-list">
-                    <ServiceItem imgSrc='./images/icon big data and analityc.png' serviceTitleContent='Big data & Analytics'>BI & Augmented Analytics / Enterprise Data Platforms / Data Strategy and Governance</ServiceItem>
-                    </div>
-                    <div className="body-section__service-list">
-                    <ServiceItem imgSrc='./images/icon blockchain.png' serviceTitleContent='Blockchain' >Создаем прибыльные интернет-магазины, маркетплейсы и агрегаторы</ServiceItem>
-                    </div>
-                    <div className="body-section__service-list">
-                    <ServiceItem imgSrc='./images/icon game art.png' serviceTitleContent='Game Art Production' >Concept art, UI, illustration / 3D models and environments / VXT and animations</ServiceItem>
-                    </div>
+  const ServiceItemBlock = ({children}) =>
+            <div className="service__items">
+                {children}
+            </div>
+  const MainServiceBlock = ({children}) =>
+        <div className="body-section__service-block">
+            {children}
+        </div>
+  const PortfolioBlock = ({children}) =>
+    <div className="body-section__project-list">
+        {children}
+    </div>
+  const MainPortfolioBlock = ({children}) =>
+    <div className="body-section__portfolio-block">
+        {children}
+    </div>
+  const AchivmnetItemBlock =({children}) =>
+            <div className="body-section__achivementes">
+                <div className="achievements">
+                    {children}
                 </div>
             </div>
-          <div className="body-section__portfolio-block">
-            <BlockTitle title='Portfolio'>Здесь будет какой-то текст который расскажет о услугах</BlockTitle>
-            <div className="body-section__project-list">
-            <ProjectItem imgSrc='./images/project-img2.jpg' headTitle='Landing Page' headContent='Project Name' >Создаем прибыльные<br/>  интернет-магазины, маркетплейсы</ProjectItem>
-            <ProjectItem imgSrc='./images/project-img3.jpg' headTitle='Landing Page' headContent='Project Name' >Создаем прибыльные<br/>  интернет-магазины, маркетплейсы</ProjectItem>
-            <ProjectItem imgSrc='./images/project-img2.jpg' headTitle='Landing Page' headContent='Project Name' >Создаем прибыльные<br/>  интернет-магазины, маркетплейсы</ProjectItem>
-            </div>
-          </div>
-          <div className="body-section__achivementes">
-            <div className="achievements">
-              <AchievementItem score='2+' description='Years'>Создаем прибыльные интернет-магазины, маркетплейсы</AchievementItem>
-              <AchievementItem score='40+' description='Project'>Создаем прибыльные интернет-магазины, маркетплейсы</AchievementItem>
-              <AchievementItem score='10+' description='Expert' >Создаем прибыльные интернет-магазины, маркетплейсы</AchievementItem>
-              <AchievementItem score='40+' description='Project'>Создаем прибыльные интернет-магазины, маркетплейсы</AchievementItem>
-            </div>
-          </div>
-          <div className="body-section__clients">
+  const ClientsBlock = ({children})=>
+        <div className="clients">
+            {children}
+        </div>
+  const MainClientsBlock = ({children}) =>
+    <div className="body-section__clients">
+        {children}
+    </div>
+  const Main = () =>
+        <div className="body-section">
+            <MainServiceBlock>
+                <BlockTitle title='Service'/>
+                    <ServiceItemBlock>
+                        <ServiceItem imgSrc='./images/icon-engineering-service .png' serviceTitleContent='Engineering Service'> Software Development / Software Testing / Solutions Architecture / Business Analysis / Operations Support </ServiceItem>
+                        <ServiceItem imgSrc='./images/icon internet of thing.png' serviceTitleContent='Internet of Things'>Intelligent Mobility / Predictive Maintenance / Smart Manufacturing</ServiceItem>
+                        <ServiceItem imgSrc='./images/icon extended reality.png' serviceTitleContent='Extended Reality XR'>VR / MR / AR</ServiceItem>
+                        <ServiceItem imgSrc='./images/icon al & im.png' serviceTitleContent='AL & ML' >Artificial Intelligence / Intelligent Automation / Advanced Analytics</ServiceItem>
+                        <ServiceItem imgSrc='./images/icon big data and analityc.png' serviceTitleContent='Big data & Analytics'>BI & Augmented Analytics / Enterprise Data Platforms / Data Strategy and Governance</ServiceItem>
+                        <ServiceItem imgSrc='./images/icon blockchain.png' serviceTitleContent='Blockchain' >Создаем прибыльные интернет-магазины, маркетплейсы и агрегаторы</ServiceItem>
+                        <ServiceItem imgSrc='./images/icon game art.png' serviceTitleContent='Game Art Production' >Concept art, UI, illustration / 3D models and environments / VXT and animations</ServiceItem>
+                    </ServiceItemBlock>
+            </MainServiceBlock>
+            <MainPortfolioBlock>
+                <BlockTitle title='Portfolio'>Здесь будет какой-то текст который расскажет о услугах</BlockTitle>
+                <PortfolioBlock>
+                    <ProjectItem imgSrc='./images/project-img2.jpg' headTitle='Landing Page' headContent='Project Name' >Создаем прибыльные<br/>  интернет-магазины, маркетплейсы</ProjectItem>
+                    <ProjectItem imgSrc='./images/project-img3.jpg' headTitle='Landing Page' headContent='Project Name' >Создаем прибыльные<br/>  интернет-магазины, маркетплейсы</ProjectItem>
+                    <ProjectItem imgSrc='./images/project-img2.jpg' headTitle='Landing Page' headContent='Project Name' >Создаем прибыльные<br/>  интернет-магазины, маркетплейсы</ProjectItem>
+                </PortfolioBlock>
+            </MainPortfolioBlock>
+            <AchivmnetItemBlock>
+                <AchievementItem score='2+' description='Years'>Создаем прибыльные интернет-магазины, маркетплейсы</AchievementItem>
+                <AchievementItem score='40+' description='Project'>Создаем прибыльные интернет-магазины, маркетплейсы</AchievementItem>
+                <AchievementItem score='10+' description='Expert' >Создаем прибыльные интернет-магазины, маркетплейсы</AchievementItem>
+                <AchievementItem score='40+' description='Project'>Создаем прибыльные интернет-магазины, маркетплейсы</AchievementItem>
+            </AchivmnetItemBlock>
+            <MainClientsBlock>
             <BlockTitle title='Clients'>Здесь будет какой-то текст который расскажет о услугах</BlockTitle>
-            <div className="clients">
-            <Client srcImg='./images/stada_color.png' alt='stada img' />
-            <Client srcImg='./images/Hunter_Logo.png' alt='hunter img' />
-            <Client srcImg='./images/eroglu_logo.png' alt='erogu img' />
-            <Client srcImg='./images/logo_krieken-bier.png' alt='krieken img' />
-            </div>
-          </div>
+            <ClientsBlock>
+                <Client srcImg='./images/stada_color.png' alt='stada img' />
+                <Client srcImg='./images/Hunter_Logo.png' alt='hunter img' />
+                <Client srcImg='./images/eroglu_logo.png' alt='erogu img' />
+                <Client srcImg='./images/logo_krieken-bier.png' alt='krieken img' />
+            </ClientsBlock>
+            </MainClientsBlock>
           <SeoText/>
         </div>
         const FooterMail = ({mail, mailName}) =>
